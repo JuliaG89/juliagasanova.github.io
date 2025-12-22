@@ -127,7 +127,7 @@
             }
         });
 
-        const trackables = Array.from(document.querySelectorAll('header#hero, section'));
+        const trackables = Array.from(document.querySelectorAll('header#general, section'));
 
         let rafId = null;
         const computeActiveByArea = () => {
