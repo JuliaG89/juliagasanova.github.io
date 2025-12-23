@@ -515,6 +515,10 @@ body.is-transitioning::before {
     justify-content: center;
   }
   
+  .hero-content {
+    margin-top: 0;
+  }
+  
   .hero-content h1 {
     font-size: 36px;
     margin-bottom: 8px;
@@ -612,6 +616,22 @@ body.is-transitioning::before {
     --float-shadow-offset: 6px;
     --float-shadow-blur: 14px;
   }
+
+  /* Disable scroll animations on small screens */
+  .section-reveal,
+  .section-reveal.in-view,
+  .section-reveal > *,
+  .section-reveal.in-view > * {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  
+  body::before,
+  body.is-transitioning::before {
+    transition: none !important;
+    opacity: 0 !important;
+  }
 }
 
 /* ============================================
@@ -634,6 +654,13 @@ body.is-transitioning::before {
   /* Mobile dropdown */
   .nav-toggle {
     display: inline-flex;
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+  }
+  
+  .nav-toggle-line {
+    width: 16px;
   }
   
   .nav-links {
@@ -673,6 +700,11 @@ body.is-transitioning::before {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 30px;
+  }
+  
+  .hero-content {
+    margin-top: 0;
+    padding-top: 0;
   }
   
   .hero-content h1 {
