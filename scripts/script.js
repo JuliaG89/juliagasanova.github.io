@@ -195,3 +195,63 @@
         setupNavJump();
     }
 })();
+
+// Automatic language detection and redirection
+(function() {
+    const currentPath = window.location.pathname;
+    const isSkPage = currentPath.includes('/sk/');
+    
+    // Check if user has a saved language preference
+    const savedLang = localStorage.getItem('preferredLanguage');
+    
+    if (savedLang) {
+        // User has a saved preference - respect it
+        if (savedLang === 'sk' && !isSkPage) {
+            window.location.href = 'sk/index.html';
+            return;
+        } else if (savedLang === 'en' && isSkPage) {
+            window.location.href = '../index.html';
+            return;
+        }
+    } else {
+        // No saved preference - use automatic detection
+        const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        const isSlovak = userLang.startsWith('sk');
+        
+        // Redirect to appropriate language if needed
+        if (!isSkPage && isSlovak) {
+            // User prefers Slovak but is on English page
+            localStorage.setItem('preferredLanguage', 'sk');
+            window.location.href = 'sk/index.html';
+        } else if (isSkPage && !isSlovak) {
+            // User doesn't prefer Slovak but is on Slovak page (default to English)
+            localStorage.setItem('preferredLanguage', 'en');
+            window.location.href = '../index.html';
+        } else {
+            // Save the current language as preference
+            localStorage.setItem('preferredLanguage', isSkPage ? 'sk' : 'en');
+        }
+    }
+})();
+
+// Language selector handler
+(function() {
+    const languageSelect = document.getElementById('language-select');
+    if (!languageSelect) return;
+
+    languageSelect.addEventListener('change', function() {
+        const selectedLang = this.value;
+        const currentPath = window.location.pathname;
+        
+        // Save the user's language preference
+        localStorage.setItem('preferredLanguage', selectedLang);
+        
+        if (selectedLang === 'sk' && !currentPath.includes('/sk/')) {
+            // Switch to Slovak
+            window.location.href = 'sk/index.html';
+        } else if (selectedLang === 'en' && currentPath.includes('/sk/')) {
+            // Switch to English
+            window.location.href = '../index.html';
+        }
+    });
+})();
