@@ -759,7 +759,7 @@ body.is-transitioning::before {
     width: 30px;
     height: 30px;
     margin-right: 4px;
-    margin-left: auto; /* push toggle to right */
+    /* removed margin-left: auto to keep toggle on left */
   }
   
   .nav-toggle-line {
@@ -769,8 +769,8 @@ body.is-transitioning::before {
   .nav-links {
     display: none;
     position: fixed;
-    top: 56px;
-    right: 12px;
+    top: 42px;
+    left: 8px;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
@@ -794,7 +794,7 @@ body.is-transitioning::before {
   .desktop-logo { display: none; }
   .mobile-logo { display: block; margin-bottom: 8px; }
   .language-selector.desktop-only { display: none; }
-  .language-selector.mobile-only { display: flex; margin-bottom: 8px; }
+  .language-selector.mobile-only { display: flex; /* removed margin-bottom since not in dropdown */ }
 
   /* Footer on mobile */
   .main-footer {

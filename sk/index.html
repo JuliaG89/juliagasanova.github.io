@@ -28,8 +28,6 @@
 <body>
 
     <nav class="main-nav" aria-label="Navigácia stránky">
-        <!-- desktop logo (left side) -->
-        <video src="../img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
         <button class="nav-toggle" aria-expanded="false" aria-label="Otvoriť navigáciu">
             <span class="nav-toggle-box" aria-hidden="true">
                 <span class="nav-toggle-line"></span>
@@ -37,18 +35,20 @@
                 <span class="nav-toggle-line"></span>
             </span>
         </button>
+        <!-- desktop logo (left side) -->
+        <video src="../img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
+        <!-- mobile-only language selector (top right on mobile) -->
+        <div class="language-selector mobile-only">
+            <label for="language-select-mobile" class="sr-only">Vybrať jazyk</label>
+            <select id="language-select-mobile" aria-label="Vybrať jazyk">
+                <option value="en">EN</option>
+                <option value="sk" selected>SK</option>
+            </select>
+        </div>
         <!-- links container (center on desktop, dropdown on mobile) -->
         <div class="nav-links">
             <!-- mobile logo shown inside dropdown -->
             <video src="../img/logo.mp4" class="nav-logo mobile-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
-            <!-- mobile-only language selector (will stack after logo) -->
-            <div class="language-selector mobile-only">
-                <label for="language-select-mobile" class="sr-only">Vybrať jazyk</label>
-                <select id="language-select-mobile" aria-label="Vybrať jazyk">
-                    <option value="en">EN</option>
-                    <option value="sk" selected>SK</option>
-                </select>
-            </div>
             <a class="nav-link" href="#general">O mne</a>
             <a class="nav-link" href="#expertise">Oblasti odbornosti</a>
             <a class="nav-link" href="#career">Kariérna cesta</a>
@@ -273,10 +273,7 @@
                 <span class="date">2024 - doteraz</span>
             </h3>
             <p>
-                Od decembra 2024 pôsobím ako nezávislá IT konzultantka, pričom dodávam efektívne riešenia pre veľké, dlhodobé projekty.
-            </p>
-            <p>
-                Na ďalšom projekte som sa podieľala na vývoji softvérových riešení pre automatizáciu logistických procesov, kde som vyvinula sadu aplikácií fungujúcich ako integrovaný ekosystém.
+                Ďalším projektom, na ktorom som sa podieľala, bolo vyvíjanie softvéru pre dopravu a logistiku pre veľký reťazec supermarketov v EÚ, kde som vyvinula sadu aplikácií fungujúcich ako integrovaný ekosystém.
                 Tieto aplikácie komunikovali s internými komponentmi aj s viacerými externými systémami, čo si vyžadovalo starostlivý návrh rozhraní a tokov dát.
                 Moje zodpovednosti zahŕňali vývoj API, ETL procesov a implementáciu dátových pipeline, ako aj tvorbu reportov a dashboardov pre prevádzkový prehľad.
                 Okrem práce na back-ende a integrácii som významne prispela aj k vývoju front-endu, budovaním bohatých používateľských rozhraní, ktoré vyvažovali funkcionalitu, použiteľnosť a výkon.

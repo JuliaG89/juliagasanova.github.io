@@ -28,8 +28,6 @@
 <body>
 
     <nav class="main-nav" aria-label="Main navigation">
-        <!-- desktop logo (left side) -->
-        <video src="img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
         <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
             <span class="nav-toggle-box" aria-hidden="true">
                 <span class="nav-toggle-line"></span>
@@ -37,18 +35,20 @@
                 <span class="nav-toggle-line"></span>
             </span>
         </button>
+        <!-- desktop logo (left side) -->
+        <video src="img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
+        <!-- mobile-only language selector (top right on mobile) -->
+        <div class="language-selector mobile-only">
+            <label for="language-select-mobile" class="sr-only">Select language</label>
+            <select id="language-select-mobile" aria-label="Choose language">
+                <option value="en" selected>EN</option>
+                <option value="sk">SK</option>
+            </select>
+        </div>
         <!-- links container (center on desktop, dropdown on mobile) -->
         <div class="nav-links">
             <!-- mobile logo shown inside dropdown -->
             <video src="img/logo.mp4" class="nav-logo mobile-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
-            <!-- mobile-only language selector (will stack after logo) -->
-            <div class="language-selector mobile-only">
-                <label for="language-select-mobile" class="sr-only">Select language</label>
-                <select id="language-select-mobile" aria-label="Choose language">
-                    <option value="en" selected>EN</option>
-                    <option value="sk">SK</option>
-                </select>
-            </div>
             <a class="nav-link" href="#general">About me</a>
             <a class="nav-link" href="#expertise">Areas of Expertise</a>
             <a class="nav-link" href="#career">Career Path</a>
@@ -273,10 +273,7 @@
                 <span class="date">2024 - present</span>
             </h3>
             <p>
-                Since December 2024, I have been an independent IT consultant, delivering impactful solutions on large, long-term projects.
-            </p>
-            <p>
-                Another project I contributed to was the development of software solutions for logistics process automation, where I developed a set of applications operating as an integrated ecosystem.
+                Another project I contributed to involved developing transport and logistics software for a large supermarket chain in the EU, designing and building a suite of applications that function as an integrated ecosystem.
                 These applications communicated with internal components as well as multiple external systems, requiring careful design of interfaces and data flows.
                 My responsibilities covered API development, ETL processes, and data pipeline implementation, along with the development of reports and dashboards for operational insight.
                 Alongside back-end and integration work, I contributed significantly to front-end development, building rich user interfaces that balanced functionality, usability, and performance.
