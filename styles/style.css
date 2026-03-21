@@ -28,6 +28,7 @@ body {
   background: #fff;
   color: #000;
   line-height: 1.6;
+  padding-bottom: 60px;
 }
 
 /* ensure hero content sits below nav without creating a white gap */
@@ -380,6 +381,32 @@ body.is-transitioning::before {
 }
 
 /* ============================================
+   FOOTER
+   ============================================ */
+
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  padding: 8px 24px;
+  border-radius: 8px 8px 0 0;
+  z-index: 12000;
+  color: var(--accent-color);
+  border-top: 1px solid rgba(255, 179, 102, 0.2);
+}
+
+.main-footer .legal-info {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* ============================================
    HERO SECTION
    ============================================ */
 
@@ -425,19 +452,43 @@ body.is-transitioning::before {
 
 .about-general {
   display: flex;
-  gap: 80px;
+  flex-direction: column;
   padding: 100px 60px;
 }
 
+.about-general h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.expertise-columns {
+  display: flex;
+  gap: 80px;
+}
+
+.expertise-left,
+.expertise-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.expertise-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .profile-img {
-  width: 30%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .profile-img figure {
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .profile-img img {
@@ -448,30 +499,25 @@ body.is-transitioning::before {
   display: block;
 }
 
-.profile-text {
-  justify-content: center;
-  align-items: center;
+.skills-list {
+  flex: 1;
 }
 
-.profile-text h2 {
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
-.profile-text p,
-.profile-text li {
+.skills-list p,
+.skills-list li {
   color: #333;
   text-align: justify;
 }
 
-.profile-text p {
-  max-width: 800px;
+.skills-list p {
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-.profile-text li {
-  max-width: 800px;
+.skills-list li {
+  max-width: none;
   font-size: 16px;
+  margin-bottom: 8px;
 }
 
 /* ============================================
@@ -592,6 +638,15 @@ body.is-transitioning::before {
     gap: 40px;
     padding: 50px 20px;
   }
+
+  .expertise-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .expertise-left {
+    gap: 30px;
+  }
   
   .profile-img {
     width: 100%;
@@ -610,17 +665,12 @@ body.is-transitioning::before {
     margin-bottom: 15px;
     width: 100%;
   }
-  
-  .profile-text {
+
+  .skills-list {
     width: 100%;
   }
-  
-  .profile-text h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .profile-text p {
+
+  .skills-list p {
     max-width: 100%;
     font-size: 14px;
   }
@@ -631,6 +681,11 @@ body.is-transitioning::before {
   }
   
   .contents h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .about-general h2 {
     font-size: 24px;
     margin-bottom: 30px;
   }
@@ -669,6 +724,15 @@ body.is-transitioning::before {
   body.is-transitioning::before {
     transition: none !important;
     opacity: 0 !important;
+  }
+
+  /* Footer on tablet */
+  .main-footer {
+    padding: 8px 20px;
+  }
+
+  .main-footer .legal-info {
+    font-size: 12px;
   }
 }
 
@@ -732,6 +796,104 @@ body.is-transitioning::before {
   .language-selector.desktop-only { display: none; }
   .language-selector.mobile-only { display: flex; margin-bottom: 8px; }
 
+  /* Footer on mobile */
+  .main-footer {
+    padding: 6px 12px;
+  }
+
+  .main-footer .legal-info {
+    font-size: 11px;
+  }
+}
+
+/* Floating email quick action */
+.floating-email-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 1px solid rgba(255, 179, 102, 0.55);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: #111;
+  text-decoration: none;
+  z-index: 13000;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.floating-email-btn:hover,
+.floating-email-btn:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.35);
+  background: #ffd097;
+}
+
+.floating-email-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.email-popup {
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  max-width: 280px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--accent-color);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 179, 102, 0.35);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.22);
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 13500;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.email-popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.email-popup a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.email-popup .email-popup-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  border-radius: 100%;
+}
+
+@media (max-width: 768px) {
+  .email-popup {
+    right: 80px;
+    bottom: 72px;
+    max-width: 80%;
+    font-size: 13px;
+  }
+}
+
   /* adjust language-selector appearance inside dropdown */
   .nav-links .language-selector {
     margin-right: 0;
@@ -750,7 +912,6 @@ body.is-transitioning::before {
     min-width: 46px;
     border-radius: 5px;
   }
-}
 
 /* Small mobile optimization */
 @media (max-width: 480px) {
@@ -804,17 +965,17 @@ body.is-transitioning::before {
     padding: 30px 15px;
     gap: 30px;
   }
+
+  .expertise-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
   
   .profile-img img {
     max-width: 250px;
   }
   
-  .profile-text h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-  
-  .profile-text p {
+  .skills-list p {
     font-size: 12px;
   }
 
@@ -824,6 +985,11 @@ body.is-transitioning::before {
   }
   
   .contents h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-general h2 {
     font-size: 20px;
     margin-bottom: 20px;
   }

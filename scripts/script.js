@@ -258,5 +258,98 @@
     selects.forEach(sel => sel.addEventListener('change', onChange));
 })();
 
+// Periodic email prompt dialog next to floating email icon
+(function() {
+    const MESSAGE_DELAY_MS = 10 * 1000; // 10 seconds
+    const MESSAGE_INTERVAL_MS = 120 * 1000; // every 120 seconds
+    const EMAIL = 'julia.gasanova.eu@gmail.com';
+
+    function getCurrentLanguage() {
+        const desktop = document.getElementById('language-select');
+        const mobile = document.getElementById('language-select-mobile');
+        const current = desktop || mobile;
+
+        if (current && (current.value === 'en' || current.value === 'sk')) {
+            return current.value;
+        }
+
+        const saved = localStorage.getItem('preferredLanguage');
+        if (saved === 'sk' || saved === 'en') {
+            return saved;
+        }
+
+        return window.location.pathname.includes('/sk/') ? 'sk' : 'en';
+    }
+
+    function getMessageHtml(lang) {
+        if (lang === 'sk') {
+            return 'Máte otázky alebo podnety? <a href="mailto:' + EMAIL + '">Neváhajte ma kontaktovať</a>.';
+        }
+        return 'Any questions or insights to share? <a href="mailto:' + EMAIL + '">Feel free to reach out</a>.';
+    }
+
+    function createPopup() {
+        let popup = document.querySelector('.email-popup');
+
+        if (!popup) {
+            popup = document.createElement('div');
+            popup.className = 'email-popup';
+            popup.setAttribute('role', 'dialog');
+            popup.setAttribute('aria-live', 'polite');
+            popup.setAttribute('aria-label', 'Email prompt');
+
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'email-popup-close';
+            closeBtn.type = 'button';
+            closeBtn.setAttribute('aria-label', 'Close email prompt');
+            closeBtn.textContent = '×';
+            closeBtn.addEventListener('click', () => {
+                hidePopup(popup);
+            });
+
+            const text = document.createElement('span');
+            text.className = 'email-popup-text';
+            popup.appendChild(closeBtn);
+            popup.appendChild(text);
+            document.body.appendChild(popup);
+        }
+
+        return popup;
+    }
+
+    function showPopup() {
+        const popup = createPopup();
+        const messageSpan = popup.querySelector('.email-popup-text');
+        if (messageSpan) {
+            const lang = getCurrentLanguage();
+            messageSpan.innerHTML = getMessageHtml(lang);
+        }
+
+        popup.classList.add('visible');
+
+        clearTimeout(popup.dismissTimeout);
+        popup.dismissTimeout = setTimeout(() => hidePopup(popup), 12000);
+    }
+
+    function hidePopup(popup) {
+        if (!popup) return;
+        popup.classList.remove('visible');
+        clearTimeout(popup.dismissTimeout);
+    }
+
+    function initPopupScheduler() {
+        setTimeout(() => {
+            showPopup();
+            setInterval(showPopup, MESSAGE_INTERVAL_MS);
+        }, MESSAGE_DELAY_MS);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopupScheduler);
+    } else {
+        initPopupScheduler();
+    }
+})();
+
 // Navigation background toggling removed – styles remain consistent at top and scrolled
 // (left in case additional scroll behavior is added later)
