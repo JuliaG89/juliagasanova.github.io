@@ -406,6 +406,10 @@ body.is-transitioning::before {
   line-height: 1.4;
 }
 
+.main-footer .privacy-link {
+  font-size: 12px;
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
