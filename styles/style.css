@@ -385,17 +385,33 @@ body.is-transitioning::before {
    ============================================ */
 
 .main-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: static; /* allow footer to flow with page content */
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(6px);
-  padding: 8px 24px;
+  /* reserve extra right space so footer content won't overlap the floating message icon */
+  padding: 12px 96px 12px 24px;
   border-radius: 8px 8px 0 0;
-  z-index: 12000;
   color: var(--accent-color);
   border-top: 1px solid rgba(255, 179, 102, 0.2);
+
+  /* lay out footer content horizontally and pin the link to the bottom */
+  display: flex;
+  align-items: flex-end; /* align children to footer bottom */
+  justify-content: space-between; /* create space between left text and right link */
+  gap: 16px;
+
+}
+
+/* ensure footer paragraphs don't add extra margins that break alignment */
+.main-footer p {
+  margin: 0;
+}
+
+/* keep the privacy link visually separated and aligned to the bottom */
+.main-footer .privacy-link {
+  margin-left: 16px;
+  align-self: flex-end;
+  color: var(--accent-color);
 }
 
 .main-footer .legal-info {
@@ -732,7 +748,8 @@ body.is-transitioning::before {
 
   /* Footer on tablet */
   .main-footer {
-    padding: 8px 20px;
+    /* tablet: keep larger right padding to clear floating button */
+    padding: 8px 96px 8px 20px;
   }
 
   .main-footer .legal-info {
@@ -802,7 +819,8 @@ body.is-transitioning::before {
 
   /* Footer on mobile */
   .main-footer {
-    padding: 6px 12px;
+    /* mobile: slightly smaller reserved space but still avoids overlap */
+    padding: 6px 76px 6px 12px;
   }
 
   .main-footer .legal-info {
