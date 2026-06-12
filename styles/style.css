@@ -819,11 +819,21 @@ body.is-transitioning::before {
 
   /* Footer on mobile */
   .main-footer {
-    /* mobile: slightly smaller reserved space but still avoids overlap */
-    padding: 6px 76px 6px 12px;
+    /* mobile: single column layout */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 76px 12px 12px;
   }
 
   .main-footer .legal-info {
+    font-size: 11px;
+  }
+
+  .main-footer .privacy-link {
+    margin-left: 0;
+    align-self: flex-start;
     font-size: 11px;
   }
 }
