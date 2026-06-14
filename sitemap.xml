@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This sitemap includes hreflang alternate links for English (en) and Slovak (sk).
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://juliagasanova.eu/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://juliagasanova.eu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://juliagasanova.eu/sk/" />
+  </url>
+
+  <url>
+    <loc>https://juliagasanova.eu/privacy.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://juliagasanova.eu/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://juliagasanova.eu/sk/privacy.html" />
+  </url>
+
+  <url>
+    <loc>https://juliagasanova.eu/sk/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://juliagasanova.eu/sk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juliagasanova.eu/" />
+  </url>
+
+  <url>
+    <loc>https://juliagasanova.eu/sk/privacy.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://juliagasanova.eu/sk/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juliagasanova.eu/privacy.html" />
+  </url>
+
+</urlset>

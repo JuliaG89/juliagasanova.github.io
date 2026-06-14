@@ -196,6 +196,49 @@
     }
 })();
 
+/* Image protection: wrap imgs with overlay and block contextmenu/drag */
+(function(){
+    function protectImages() {
+        const imgs = Array.from(document.querySelectorAll('img'));
+        imgs.forEach(img => {
+            if (img.closest('.protect-img-wrapper')) return; // already wrapped
+            try {
+                img.setAttribute('draggable', 'false');
+                img.style.userSelect = 'none';
+
+                const wrapper = document.createElement('span');
+                wrapper.className = 'protect-img-wrapper';
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
+
+                const overlay = document.createElement('span');
+                overlay.className = 'protect-overlay';
+                wrapper.appendChild(overlay);
+
+                // block context menu and mouse interactions on the overlay
+                overlay.addEventListener('contextmenu', e => e.preventDefault());
+                overlay.addEventListener('mousedown', e => e.preventDefault());
+                img.addEventListener('dragstart', e => e.preventDefault());
+            } catch (err) {
+                // ignore
+            }
+        });
+
+        // capture contextmenu events on images as a fallback
+        document.addEventListener('contextmenu', function(e){
+            if (e.target && e.target.closest && e.target.closest('.protect-img-wrapper')) {
+                e.preventDefault();
+            }
+        }, true);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', protectImages);
+    } else {
+        protectImages();
+    }
+})();
+
 // Automatic language detection and redirection
 (function() {
     const currentPath = window.location.pathname;

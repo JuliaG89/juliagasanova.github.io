@@ -1,0 +1,7 @@
+# Allow all user agents; point to sitemap
+
+User-agent: *
+Allow: /
+
+# Replace with your real sitemap URL
+Sitemap: https://juliagasanova.eu/sitemap.xml
