@@ -690,6 +690,47 @@ body.is-transitioning::before {
   color: inherit;
 }
 
+.project-intro {
+  margin: 0 0 18px;
+}
+
+.project-list-label {
+  font-size: 1.08em;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.achievement-label {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+
+.project-list {
+  margin: 0 0 18px 22px;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.project-list li {
+  font-size: 1.08em;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.project-description {
+  margin: 0 0 18px 26px;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.project-description p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
 /* Links in light sections */
 .contents.light a {
   color: #0066cc;
@@ -855,6 +896,27 @@ body.is-transitioning::before {
   
   .content-item p {
     font-size: 14px;
+  }
+
+  .project-list-label {
+    font-size: 1rem;
+  }
+
+  .project-list {
+    margin-left: 16px;
+  }
+
+  .project-list li {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    margin-left: 14px;
+    padding-left: 12px;
+  }
+
+  .project-description p {
+    font-size: 0.92em;
   }
 
   /* Services Grid */
