@@ -23,6 +23,41 @@
     <meta name="twitter:description" content="Premieňam obchodné potreby na spoľahlivé riešenia s reálnym prínosom. Business analýza - optimalizácia a automatizácia procesov - vývoj produktov - dátová stratégia, dátové inžinierstvo a analytika - návrh riešení - technologické vedenie a riadenie dodávky."> 
     
     <link rel="stylesheet" href="../styles/style.css">
+    <noscript>
+        <style>
+            @media (max-width: 720px) {
+                .main-nav {
+                    position: sticky;
+                    top: 0;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                }
+
+                .nav-toggle {
+                    display: none;
+                }
+
+                .nav-links {
+                    display: flex !important;
+                    position: static !important;
+                    width: 100%;
+                    margin-top: 8px;
+                }
+
+                .desktop-logo {
+                    display: none;
+                }
+
+                .mobile-logo {
+                    display: block;
+                }
+
+                .hero {
+                    padding-top: 30px;
+                }
+            }
+        </style>
+    </noscript>
 
     <script type="application/ld+json">
     {
@@ -270,7 +305,7 @@
     <section id="projects" class="contents light">
         <h2>Projekty</h2>
 
-        <div class="content-item">
+        <div class="content-item project-card">
             <h3>
                 <span class="date">2011 - 2017</span>
             </h3>
@@ -305,31 +340,31 @@
             </div>
             <p class="project-list-label achievement-label">Kľúčové úspechy</p>
             <div class="career-cards">
-                <div class="career-card"><p>Automatizácia interných procesov call centra, zníženie manuálnej práce o 75%+.</p></div>
-                <div class="career-card"><p>Návrh jednotného dátového riešenia, ktoré zlepšilo výkon vyhľadávania dát o 40%+, umožnilo personalizáciu IVR a skrátilo čas spracovania hovorov o približne 20%.</p></div>
-                <div class="career-card"><p>Vývoj outbound calling systému na platforme Asterisk, ktorý znížil náklady na infraštruktúru a rozšírenie softvéru o 80%+.</p></div>
+                <div class="career-card" data-metric="75%+"><p>Automatizácia interných procesov call centra, zníženie manuálnej práce o 75%+.</p></div>
+                <div class="career-card" data-metric="40%+"><p>Návrh jednotného dátového riešenia, ktoré zlepšilo výkon vyhľadávania dát o 40%+, umožnilo personalizáciu IVR a skrátilo čas spracovania hovorov o približne 20%.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Vývoj outbound calling systému na platforme Asterisk, ktorý znížil náklady na infraštruktúru a rozšírenie softvéru o 80%+.</p></div>
             </div>
         </div>
 
-        <div class="content-item">
+        <div class="content-item project-card">
             <h3>
                 <span class="date">2017 - 2024</span>
             </h3>
             <div class="project-intro">
                 <p class="project-list-label">Projekty</p>
                 <ul class="project-list">
-                    <li>Centralizovaný systém pre prideľovanie a vyplácanie dôchodkov pre Penzijný fond Ukrajiny.</li>
+                    <li>Centralizovaný systém pre prideľovanie a vyplácanie dôchodkov pre Dôchodkový fond Ukrajiny.</li>
                     <li>Centralizovaný dispečerský a monitorovací systém pre vyplácanie sociálnych dávok z rôznych systémov.</li>
                     <li>Systémy pre finančný a štatistický reporting.</li>
                 </ul>
             </div>
             <div class="project-description">
                 <p>
-                    Viac ako sedem rokov som pracovala v spoločnosti <a href="https://medirent.ua/" target="_blank">Medirent Information Technology</a>, ktorá vyvíjala rozsiahle softvérové systémy pre štátne a sociálne inštitúcie, vrátane e-government iniciatív a misiovo kritických platforiem pre výplatu sociálnych dávok, vrátane dôchodkového systému pre <a href="https://www.pfu.gov.ua/" target="_blank">Dôchodkový fond Ukrajiny</a>.
+                    Viac ako sedem rokov som pracovala v spoločnosti <a href="https://medirent.ua/" target="_blank">Medirent Information Technology</a>, ktorá vyvíjala rozsiahle softvérové systémy pre štátne a sociálne inštitúcie, vrátane e-government iniciatív a platforiem pre výplatu sociálnych dávok, vrátane dôchodkového systému pre <a href="https://www.pfu.gov.ua/" target="_blank">Dôchodkový fond Ukrajiny</a>.
                 </p>
                 <p>
                     Bola som zapojená do celého životného cyklu vysokozáťažových, misiovo kritických systémov, vrátane údržby, produkčnej podpory a implementácie rozsiahlych zmien a vylepšení. 
-                    Mojou súčasťou bola aj tvorba API a integračných vrstiev pre výmenu dát medzi štátnymi službami, internými systémami a bankami.
+                    Súčasťou mojej práce bola aj tvorba API a integračných vrstiev pre výmenu dát medzi štátnymi službami, internými systémami a bankami.
                 </p>
                 <p>
                     Významná časť mojej práce bola zameraná na dátovú architektúru a analytiku. 
@@ -344,12 +379,12 @@
             </div>
             <p class="project-list-label achievement-label">Kľúčové príspevky</p>
             <div class="career-cards">
-                <div class="career-card"><p>Vedenie migrácie vysokozáťažového dôchodkového systému z Oracle APEX na ASP.NET pri zachovaní funkcionality a modernizácii platformy.</p></div>
-                <div class="career-card"><p>Návrh dátových skladov, ktoré skrátili čas generovania reportov o 50–70% a zlepšili stabilitu systému pri špičkovej záťaži.</p></div>
-                <div class="career-card"><p>Vybudovanie centralizovanej integračnej platformy, ktorá znížila manuálnu operatívu o 30%+.</p></div>
+                <div class="career-card" data-metric="50%+"><p>Úspešne som viedla migráciu vysokovýkonného dôchodkového systému z Oracle APEX na ASP.NET, pričom som zabezpečila 100% zachovanie funkcionality, modernizáciu platformy a zvýšenie produktivity o viac ako 50%.</p></div>
+                <div class="career-card" data-metric="50-70%"><p>Návrh dátových skladov, ktoré skrátili čas generovania reportov o 50–70% a zlepšili stabilitu systému pri špičkovej záťaži.</p></div>
+                <div class="career-card" data-metric="30%+"><p>Vybudovanie centralizovanej integračnej platformy, ktorá znížila manuálnu operatívu o 30%+.</p></div>
             </div>
         </div>
-        <div class="content-item">
+        <div class="content-item project-card">
             <h3>
                 <span class="date">2024 - 2026</span>
             </h3>
@@ -371,11 +406,11 @@
             </div>
             <p class="project-list-label achievement-label">Kľúčové úspechy</p>
             <div class="career-cards">
-                <div class="career-card"><p>Samostatný návrh a implementáciu riešenia, ktoré zjednotilo a nahradilo dve zastarané platformy, čím sa zlepšila udržiavateľnosť systému, znížila jeho komplexnosť a zvýšila prevádzková efektivita.</p></div>
-                <div class="career-card"><p>Vývoj reportingových riešení, ktoré zvýšili transparentnosť procesov a podporili efektívnejšie operatívne rozhodovanie.</p></div>
+                <div class="career-card" data-metric="25%+"><p>Samostatne som navrhla a implementovala dva systémy, ktoré nahradili existujúce zastarané platformy, čím sa znížila nedostupnosť systémov a počet incidentov o 15% a zvýšila sa udržiavateľnosť a prevádzková efektívnosť o viac ako 25%.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Vyvíjala som reportingové riešenia, ktoré zabezpečili prehľad o viac ako 80 % prevádzkových procesov a umožnili efektívnejšie monitorovanie a rozhodovanie na základe dát.</p></div>
             </div>
         </div>
-         <div class="content-item">
+         <div class="content-item project-card">
             <h3>
                 <span class="date">2026 - doteraz</span>
             </h3>

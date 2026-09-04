@@ -37,8 +37,8 @@
 
         const opts = {
             root: null,
-            rootMargin: '0px 0px -30% 0px',
-            threshold: 0.05
+            rootMargin: '0px 0px -24% 0px',
+            threshold: 0.08
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -61,13 +61,18 @@
 
                     el.classList.add('in-view');
 
-                    document.body.classList.add('is-transitioning');
-                    setTimeout(() => document.body.classList.remove('is-transitioning'), 650);
-
-                    setTimeout(() => children.forEach(c => c.style.transitionDelay = ''), 1200 + (children.length * 120));
+                    setTimeout(() => children.forEach(c => {
+                        c.style.transitionDelay = '';
+                        c.style.opacity = '';
+                        c.style.transform = '';
+                    }), 1200 + (children.length * 120));
                 } else {
                     el.classList.remove('in-view');
-                    Array.from(el.children).forEach(c => c.style.transitionDelay = '');
+                    Array.from(el.children).forEach(c => {
+                        c.style.transitionDelay = '';
+                        c.style.opacity = '';
+                        c.style.transform = '';
+                    });
                 }
             });
         }, opts);
@@ -87,10 +92,11 @@
 
                     s.classList.add('in-view');
 
-                    document.body.classList.add('is-transitioning');
-                    setTimeout(() => document.body.classList.remove('is-transitioning'), 650);
-
-                    setTimeout(() => children.forEach(c => c.style.transitionDelay = ''), 1200 + (children.length * 120));
+                    setTimeout(() => children.forEach(c => {
+                        c.style.transitionDelay = '';
+                        c.style.opacity = '';
+                        c.style.transform = '';
+                    }), 1200 + (children.length * 120));
                 }));
             }
         });
@@ -110,6 +116,19 @@
         const links = Array.from(nav.querySelectorAll('a.nav-link'));
         const toggle = nav.querySelector('.nav-toggle');
 
+        let jumpTimer = null;
+        function playSectionJump(target) {
+            if (prefersReduced) return;
+            if (!target) return;
+            target.classList.remove('section-arriving');
+            void target.offsetWidth;
+            clearTimeout(jumpTimer);
+            jumpTimer = setTimeout(() => {
+                target.classList.add('section-arriving');
+                jumpTimer = setTimeout(() => target.classList.remove('section-arriving'), 720);
+            }, 220);
+        }
+
         nav.addEventListener('click', (e) => {
             const a = e.target.closest('a.nav-link');
             if (!a) return;
@@ -118,6 +137,7 @@
             const target = document.querySelector(id);
             if (!target) return;
 
+            playSectionJump(target);
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             try { history.pushState(null, '', id); } catch {}
 
@@ -193,6 +213,33 @@
         document.addEventListener('DOMContentLoaded', setupNavJump);
     } else {
         setupNavJump();
+    }
+
+    function setupCardInteractions() {
+        if (prefersReduced || !window.matchMedia('(hover: hover)').matches) return;
+
+        const cards = Array.from(document.querySelectorAll('.career-card, .service-item'));
+        cards.forEach(card => {
+            card.addEventListener('pointermove', (event) => {
+                const rect = card.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - 0.5;
+                const y = (event.clientY - rect.top) / rect.height - 0.5;
+                const maxTilt = card.classList.contains('service-item') ? 3.5 : 7;
+                card.style.setProperty('--tilt-x', `${(-y * maxTilt).toFixed(2)}deg`);
+                card.style.setProperty('--tilt-y', `${(x * maxTilt).toFixed(2)}deg`);
+            });
+
+            card.addEventListener('pointerleave', () => {
+                card.style.setProperty('--tilt-x', '0deg');
+                card.style.setProperty('--tilt-y', '0deg');
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupCardInteractions);
+    } else {
+        setupCardInteractions();
     }
 })();
 
