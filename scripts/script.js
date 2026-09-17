@@ -2,7 +2,21 @@
 (function(){
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    function sortProjectsByDate() {
+        const projectSection = document.querySelector('#projects');
+        if (!projectSection) return;
+
+        const projects = Array.from(projectSection.querySelectorAll(':scope > .project-card'));
+        projects
+            .sort((a, b) => {
+                const getStartYear = project => Number.parseInt(project.querySelector('.date')?.textContent || '', 10) || 0;
+                return getStartYear(b) - getStartYear(a);
+            })
+            .forEach(project => projectSection.appendChild(project));
+    }
+
     function initSections() {
+        sortProjectsByDate();
         const sections = Array.from(document.querySelectorAll('section'));
         if (!sections.length) return;
 
