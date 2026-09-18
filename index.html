@@ -22,34 +22,45 @@
     <meta name="twitter:title" content="Julia Gasanova | Bridging Business, Data & Technology to create Digital Products that work">
     <meta name="twitter:description" content="Translating business needs into reliable and impactful solutions. Business Analysis - Process Optimization & Automation - Product Development - Data Strategy, Engineering & Analytics - Solution Architecture - Technology Leadership & Delivery.">
     
+    <!-- Fonts: linked here (not @import in the CSS) so the browser can load them in parallel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles/style.css">
     <noscript>
         <style>
-            @media (max-width: 720px) {
+            /* Without JavaScript: static navigation and no (non-working) language selector */
+            .language-selector {
+                display: none !important;
+            }
+
+            @media (max-width: 1000px) {
                 .main-nav {
-                    position: sticky;
+                    position: relative;
                     top: 0;
-                    align-items: flex-start;
                     flex-wrap: wrap;
+                    justify-content: center;
+                    background: #131313;
+                    border-radius: 0;
                 }
 
-                .nav-toggle {
-                    display: none;
-                }
-
-                .nav-links {
-                    display: flex !important;
-                    position: static !important;
-                    width: 100%;
-                    margin-top: 8px;
-                }
-
+                .nav-toggle,
                 .desktop-logo {
                     display: none;
                 }
 
                 .mobile-logo {
                     display: block;
+                }
+
+                .nav-links {
+                    position: static;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    background: transparent;
                 }
 
                 .hero {
@@ -118,6 +129,7 @@
             <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#academbg">Academic Background</a>
             <a class="nav-link" href="#contact">Contact information</a>
+            <noscript><a class="nav-link" href="sk/index.html" hreflang="sk">SK</a></noscript>
         </div>
         <!-- language selector (right side on desktop) -->
         <div class="language-selector desktop-only">
@@ -310,42 +322,52 @@
 
         <div class="content-item project-card">
             <h3>
-                <span class="date">2011 - 2017</span>
+                <span class="date">2026 - present</span>
             </h3>
             <div class="project-intro">
                 <p class="project-list-label">Projects</p>
                 <ul class="project-list">
-                    <li>IVR solutions for inbound and outbound calls, supporting both internal company extensions and external outsourcing projects, like a telephone voting solution for Eurovision.</li>
-                    <li>CRM systems for call centres.</li>
-                    <li>Software supporting internal call centre processes, including agent time management and internal communication.</li>
-                    <li>Reporting solutions.</li>
+                    <li>A major information portal supporting job searching and labour mobility across the EU.</li>
                 </ul>
             </div>
             <div class="project-description">
                 <p>
-                    I started my career as a software engineer at <a href="https://ukrtelecom.ua/" target="_blank">Ukrtelecom</a>, one of Ukraine’s largest telecommunications operators with millions of subscribers, building and supporting software for call centre operations and telephony systems.
+                    I currently work as a consultant in business analysis and product ownership for a large-scale international digital platform.
                 </p>
                 <p>
-                    I worked across 20+ production systems, including IVR solutions and call-centre operator platforms, covering call handling, processing, and internal workflows. 
-                    My responsibilities included end-to-end delivery of call-centre hotline projects, from requirements analysis and solution design to production rollout, as well as building automation solutions for internal operations.
+                    My role focuses on business process analysis, stakeholder collaboration, requirements management, and translating business needs into clear, actionable solutions.
+                    I work closely with business representatives, subject matter experts, designers, and development teams to define product direction, prioritize initiatives, and ensure successful delivery.
                 </p>
                 <p>
-                    Beyond application development, I designed and implemented integration solutions and APIs for cross-system communication, along with data architectures, including data warehouses, ETL pipelines, and analytics platforms supporting large-scale reporting and dashboards.
-                    I also developed operational systems for real-time information display in call centre environments.
+                    A significant part of my work involves shaping high-level business requirements, evaluating solution options, and balancing user needs, business objectives, and technical constraints.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-item project-card">
+            <h3>
+                <span class="date">2024 - 2026</span>
+            </h3>
+            <div class="project-intro">
+                <p class="project-list-label">Projects</p>
+                <ul class="project-list">
+                    <li>Transport and logistics management system for a large supermarket chain.</li>
+                </ul>
+            </div>
+            <div class="project-description">
+                <p>
+                    As an independent consultant, I contributed to the development of transport and logistics software for a large international supermarket chain in Central Europe, working on an integrated ecosystem of applications that connect internal systems with multiple external platforms.
                 </p>
                 <p>
-                    Another important part of my role involved leading initiatives to optimise processes, automate workflows, modernise and replace legacy systems, and implement new technologies to enhance efficiency, scalability, and overall operational performance.
-                </p>
-                <p>
-                    Over six years, I progressed from junior engineer to Head of Department. 
-                    In this role, I led a team through organisational restructuring, balancing hands-on technical delivery with team leadership, mentoring, capacity planning, stakeholder collaboration, and technical decision-making under tight constraints.
+                    My responsibilities included API development, ETL pipelines, data integration, reporting solutions, and front-end development for operational dashboards and user interfaces. 
+                    I worked across both backend and frontend layers to ensure consistency between data flow, system architecture, and user experience.
+                    Additionally, I worked on replacing outdated solutions with more modern, user-friendly, and ecosystem-compatible alternatives.
                 </p>
             </div>
             <p class="project-list-label achievement-label">Key achievements include</p>
             <div class="career-cards">
-                <div class="career-card" data-metric="75%+"><p>Automating internal call-centre processes, reducing manual effort by 75%+.</p></div>
-                <div class="career-card" data-metric="40%+"><p>Designing a unified data solution improving data retrieval performance by 40%+, enabling IVR personalisation and reducing call handling time by ~20%.</p></div>
-                <div class="career-card" data-metric="80%+"><p>Building an outbound calling system based on Asterisk framework, reducing infrastructure and software expansion costs by 80%+.</p></div>
+                <div class="career-card" data-metric="25%+"><p>Independently designed and implemented two systems replacing legacy platforms for different departments, reducing system downtime and incidents by 15% while improving maintainability and operational efficiency by 25%+.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Developed reporting solutions that established visibility into 80%+ of operational processes, enabling more effective monitoring and data-driven decision-making.</p></div>
             </div>
         </div>
 
@@ -387,53 +409,45 @@
                 <div class="career-card" data-metric="30%+"><p>Building a centralised dispatch and monitoring system for the payment of social benefits that reduced manual operational effort by 30%+.</p></div>
             </div>
         </div>
+
         <div class="content-item project-card">
             <h3>
-                <span class="date">2024 - 2026</span>
+                <span class="date">2011 - 2017</span>
             </h3>
             <div class="project-intro">
                 <p class="project-list-label">Projects</p>
                 <ul class="project-list">
-                    <li>Transport and logistics management system for a large supermarket chain.</li>
+                    <li>IVR solutions for inbound and outbound calls, supporting both internal company extensions and external outsourcing projects, like a telephone voting solution for Eurovision.</li>
+                    <li>CRM systems for call centres.</li>
+                    <li>Software supporting internal call centre processes, including agent time management and internal communication.</li>
+                    <li>Reporting solutions.</li>
                 </ul>
             </div>
             <div class="project-description">
                 <p>
-                    As an independent consultant, I contributed to the development of transport and logistics software for a large international supermarket chain in Central Europe, working on an integrated ecosystem of applications that connect internal systems with multiple external platforms.
+                    I started my career as a software engineer at <a href="https://ukrtelecom.ua/" target="_blank">Ukrtelecom</a>, one of Ukraine’s largest telecommunications operators with millions of subscribers, building and supporting software for call centre operations and telephony systems.
                 </p>
                 <p>
-                    My responsibilities included API development, ETL pipelines, data integration, reporting solutions, and front-end development for operational dashboards and user interfaces. 
-                    I worked across both backend and frontend layers to ensure consistency between data flow, system architecture, and user experience.
-                    Additionally, I worked on replacing outdated solutions with more modern, user-friendly, and ecosystem-compatible alternatives.
+                    I worked across 20+ production systems, including IVR solutions and call-centre operator platforms, covering call handling, processing, and internal workflows. 
+                    My responsibilities included end-to-end delivery of call-centre hotline projects, from requirements analysis and solution design to production rollout, as well as building automation solutions for internal operations.
+                </p>
+                <p>
+                    Beyond application development, I designed and implemented integration solutions and APIs for cross-system communication, along with data architectures, including data warehouses, ETL pipelines, and analytics platforms supporting large-scale reporting and dashboards.
+                    I also developed operational systems for real-time information display in call centre environments.
+                </p>
+                <p>
+                    Another important part of my role involved leading initiatives to optimise processes, automate workflows, modernise and replace legacy systems, and implement new technologies to enhance efficiency, scalability, and overall operational performance.
+                </p>
+                <p>
+                    Over six years, I progressed from junior engineer to Head of Department. 
+                    In this role, I led a team through organisational restructuring, balancing hands-on technical delivery with team leadership, mentoring, capacity planning, stakeholder collaboration, and technical decision-making under tight constraints.
                 </p>
             </div>
             <p class="project-list-label achievement-label">Key achievements include</p>
             <div class="career-cards">
-                <div class="career-card" data-metric="25%+"><p>Independently designed and implemented two systems replacing legacy platforms for different departments, reducing system downtime and incidents by 15% while improving maintainability and operational efficiency by 25%+.</p></div>
-                <div class="career-card" data-metric="80%+"><p>Developed reporting solutions that established visibility into 80%+ of operational processes, enabling more effective monitoring and data-driven decision-making.</p></div>
-            </div>
-        </div>
-        <div class="content-item project-card">
-            <h3>
-                <span class="date">2026 - present</span>
-            </h3>
-            <div class="project-intro">
-                <p class="project-list-label">Projects</p>
-                <ul class="project-list">
-                    <li>A major information portal supporting job searching and labour mobility across the EU.</li>
-                </ul>
-            </div>
-            <div class="project-description">
-                <p>
-                    I currently work as a consultant in business analysis and product ownership for a large-scale international digital platform.
-                </p>
-                <p>
-                    My role focuses on business process analysis, stakeholder collaboration, requirements management, and translating business needs into clear, actionable solutions.
-                    I work closely with business representatives, subject matter experts, designers, and development teams to define product direction, prioritize initiatives, and ensure successful delivery.
-                </p>
-                <p>
-                    A significant part of my work involves shaping high-level business requirements, evaluating solution options, and balancing user needs, business objectives, and technical constraints.
-                </p>
+                <div class="career-card" data-metric="75%+"><p>Automating internal call-centre processes, reducing manual effort by 75%+.</p></div>
+                <div class="career-card" data-metric="40%+"><p>Designing a unified data solution improving data retrieval performance by 40%+, enabling IVR personalisation and reducing call handling time by ~20%.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Building an outbound calling system based on Asterisk framework, reducing infrastructure and software expansion costs by 80%+.</p></div>
             </div>
         </div>
     </section>

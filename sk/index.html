@@ -22,34 +22,45 @@
     <meta name="twitter:title" content="Julia Gasanova | Prepájam biznis, dáta a technológie s cieľom vytvárať digitálne produkty, ktoré fungujú">
     <meta name="twitter:description" content="Premieňam obchodné potreby na spoľahlivé riešenia s reálnym prínosom. Business analýza - optimalizácia a automatizácia procesov - vývoj produktov - dátová stratégia, dátové inžinierstvo a analytika - návrh riešení - technologické vedenie a riadenie dodávky."> 
     
+    <!-- Fonts: linked here (not @import in the CSS) so the browser can load them in parallel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="../styles/style.css">
     <noscript>
         <style>
-            @media (max-width: 720px) {
+            /* Without JavaScript: static navigation and no (non-working) language selector */
+            .language-selector {
+                display: none !important;
+            }
+
+            @media (max-width: 1000px) {
                 .main-nav {
-                    position: sticky;
+                    position: relative;
                     top: 0;
-                    align-items: flex-start;
                     flex-wrap: wrap;
+                    justify-content: center;
+                    background: #131313;
+                    border-radius: 0;
                 }
 
-                .nav-toggle {
-                    display: none;
-                }
-
-                .nav-links {
-                    display: flex !important;
-                    position: static !important;
-                    width: 100%;
-                    margin-top: 8px;
-                }
-
+                .nav-toggle,
                 .desktop-logo {
                     display: none;
                 }
 
                 .mobile-logo {
                     display: block;
+                }
+
+                .nav-links {
+                    position: static;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    background: transparent;
                 }
 
                 .hero {
@@ -118,6 +129,7 @@
             <a class="nav-link" href="#projects">Projekty</a>
             <a class="nav-link" href="#academbg">Akademické vzdelanie</a>
             <a class="nav-link" href="#contact">Kontaktné informácie</a>
+            <noscript><a class="nav-link" href="../index.html" hreflang="en">EN</a></noscript>
         </div>
         <!-- language selector (right side on desktop) -->
         <div class="language-selector desktop-only">
@@ -310,42 +322,52 @@
 
         <div class="content-item project-card">
             <h3>
-                <span class="date">2011 - 2017</span>
+                <span class="date">2026 - doteraz</span>
             </h3>
             <div class="project-intro">
                 <p class="project-list-label">Projekty</p>
                 <ul class="project-list">
-                    <li>IVR riešenia pre prichádzajúce a odchádzajúce hovory, podporujúce interné linky spoločnosti aj externé outsourcingové projekty, ako napríklad telefonické hlasovanie v súťaži Eurovision.</li>
-                    <li>CRM systémy pre call centrá.</li>
-                    <li>Softvér podporujúci interné procesy call centra vrátane riadenia pracovného času operátorov a interných komunikačných systémov.</li>
-                    <li>Reportingové riešenia.</li>
+                    <li>Významný informačný portál podporujúci vyhľadávanie pracovných príležitostí a pracovnú mobilitu v rámci EÚ.</li>
                 </ul>
             </div>
             <div class="project-description">
                 <p>
-                    Svoju kariéru som začala ako softvérová inžinierka v <a href="https://ukrtelecom.ua/" target="_blank">Ukrtelecom</a>, jednom z najväčších telekomunikačných operátorov na Ukrajine s miliónmi odberateľov, kde som vyvíjala a udržiavala softvér pre call centrum a telekomunikačné systémy.
+                    V súčasnosti pôsobím ako konzultantka v oblasti business analýzy a produktového vlastníctva pre rozsiahlu medzinárodnú digitálnu platformu.
                 </p>
                 <p>
-                    Pracovala som na viac ako 20 produkčných systémoch, vrátane IVR riešení a platforiem pre operátorov call centra, ktoré pokrývali spracovanie hovorov a interné procesy. 
-                    Moje zodpovednosti zahŕňali kompletné dodanie projektov call-centrových liniek od analýzy požiadaviek a návrhu riešenia až po nasadenie do produkčného prostredia, ako aj vývoj automatizačných riešení pre interné procesy.
+                    Moja práca je zameraná na analýzu biznis procesov, spoluprácu so stakeholdermi, správu požiadaviek a transformáciu biznis potrieb na jasné a realizovateľné riešenia.
+                    Úzko spolupracujem s biznis zástupcami, doménovými expertmi, dizajnérmi a vývojovými tímami pri definovaní smerovania produktu, prioritizácii iniciatív a zabezpečovaní úspešného dodania riešení.
                 </p>
                 <p>
-                    Okrem vývoja aplikácií som navrhovala a implementovala integračné riešenia a API na komunikáciu medzi systémami, ako aj dátové architektúry vrátane dátových skladov, ETL procesov a analytických platforiem podporujúcich rozsiahle reportovanie a dashboardy.
-                    Taktiež som vyvíjala operačné systémy na zobrazovanie informácií v reálnom čase v prostredí call centra.
+                    Významnou súčasťou mojej práce je tvorba vysokourovňových biznis požiadaviek, vyhodnocovanie možných riešení a hľadanie rovnováhy medzi potrebami používateľov, biznis cieľmi a technickými obmedzeniami.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-item project-card">
+            <h3>
+                <span class="date">2024 - 2026</span>
+            </h3>
+            <div class="project-intro">
+                <p class="project-list-label">Projekty</p>
+                <ul class="project-list">
+                    <li>Systém riadenia dopravy a logistiky pre veľký supermarketový reťazec.</li>
+                </ul>
+            </div>
+            <div class="project-description">
+                <p>
+                    Ako nezávislá konzultantka som sa podieľala na vývoji softvéru pre oblasť dopravy a logistiky pre veľký medzinárodný maloobchodný reťazec v strednej Európe. Pracovala som na integrovanom ekosystéme aplikácií, ktoré prepájajú interné systémy s viacerými externými platformami.
                 </p>
                 <p>
-                    Ďalšou dôležitou súčasťou mojej práce bolo vedenie iniciatív zameraných na optimalizáciu procesov, automatizáciu pracovných postupov, modernizáciu a nahrádzanie zastaraných systémov a implementáciu nových technológií s cieľom zvýšiť efektivitu, škálovateľnosť a celkovú prevádzkovú výkonnosť.
-                </p>
-                <p>
-                    Počas šiestich rokov som postúpila z juniornej pozície na vedúcu oddelenia. 
-                    V tejto pozícii som viedla tím počas organizačnej reštrukturalizácie, pričom som kombinovala aktívne technické zapojenie do realizácie riešení s vedením tímu, mentoringom, plánovaním kapacít, spoluprácou so stakeholdermi a prijímaním technických rozhodnutí v podmienkach obmedzených zdrojov a času.
+                    Moja zodpovednosti zahŕňali vývoj API, ETL pipeline, dátovú integráciu, reportovacie systémy a front-end vývoj pre operačné dashboardy a používateľské rozhrania. 
+                    Pracovala som naprieč backendovou aj frontendovou vrstvou s cieľom zabezpečiť konzistenciu medzi dátovými tokmi, architektúrou systému a používateľskou skúsenosťou.
+                    Okrem toho som sa podieľala na nahrádzaní zastaraných riešení modernejšími, používateľsky prívetivejšími alternatívami kompatibilnými s celkovým ekosystémom.
                 </p>
             </div>
             <p class="project-list-label achievement-label">Kľúčové úspechy</p>
             <div class="career-cards">
-                <div class="career-card" data-metric="75%+"><p>Automatizácia interných procesov call centra, zníženie manuálnej práce o 75%+.</p></div>
-                <div class="career-card" data-metric="40%+"><p>Návrh jednotného dátového riešenia, ktoré zlepšilo výkon vyhľadávania dát o 40%+, umožnilo personalizáciu IVR a skrátilo čas spracovania hovorov o približne 20%.</p></div>
-                <div class="career-card" data-metric="80%+"><p>Vývoj outbound calling systému na platforme Asterisk, ktorý znížil náklady na infraštruktúru a rozšírenie softvéru o 80%+.</p></div>
+                <div class="career-card" data-metric="25%+"><p>Samostatne som navrhla a implementovala dva systémy, ktoré nahradili existujúce zastarané platformy, čím sa znížila nedostupnosť systémov a počet incidentov o 15% a zvýšila sa udržiavateľnosť a prevádzková efektívnosť o viac ako 25%.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Vyvíjala som reportingové riešenia, ktoré zabezpečili prehľad o viac ako 80 % prevádzkových procesov a umožnili efektívnejšie monitorovanie a rozhodovanie na základe dát.</p></div>
             </div>
         </div>
 
@@ -387,53 +409,45 @@
                 <div class="career-card" data-metric="30%+"><p>Vybudovanie centralizovanej integračnej platformy, ktorá znížila manuálnu operatívu o 30%+.</p></div>
             </div>
         </div>
+
         <div class="content-item project-card">
             <h3>
-                <span class="date">2024 - 2026</span>
+                <span class="date">2011 - 2017</span>
             </h3>
             <div class="project-intro">
                 <p class="project-list-label">Projekty</p>
                 <ul class="project-list">
-                    <li>Systém riadenia dopravy a logistiky pre veľký supermarketový reťazec.</li>
+                    <li>IVR riešenia pre prichádzajúce a odchádzajúce hovory, podporujúce interné linky spoločnosti aj externé outsourcingové projekty, ako napríklad telefonické hlasovanie v súťaži Eurovision.</li>
+                    <li>CRM systémy pre call centrá.</li>
+                    <li>Softvér podporujúci interné procesy call centra vrátane riadenia pracovného času operátorov a interných komunikačných systémov.</li>
+                    <li>Reportingové riešenia.</li>
                 </ul>
             </div>
             <div class="project-description">
                 <p>
-                    Ako nezávislá konzultantka som sa podieľala na vývoji softvéru pre oblasť dopravy a logistiky pre veľký medzinárodný maloobchodný reťazec v strednej Európe. Pracovala som na integrovanom ekosystéme aplikácií, ktoré prepájajú interné systémy s viacerými externými platformami.
+                    Svoju kariéru som začala ako softvérová inžinierka v <a href="https://ukrtelecom.ua/" target="_blank">Ukrtelecom</a>, jednom z najväčších telekomunikačných operátorov na Ukrajine s miliónmi odberateľov, kde som vyvíjala a udržiavala softvér pre call centrum a telekomunikačné systémy.
                 </p>
                 <p>
-                    Moja zodpovednosti zahŕňali vývoj API, ETL pipeline, dátovú integráciu, reportovacie systémy a front-end vývoj pre operačné dashboardy a používateľské rozhrania. 
-                    Pracovala som naprieč backendovou aj frontendovou vrstvou s cieľom zabezpečiť konzistenciu medzi dátovými tokmi, architektúrou systému a používateľskou skúsenosťou.
-                    Okrem toho som sa podieľala na nahrádzaní zastaraných riešení modernejšími, používateľsky prívetivejšími alternatívami kompatibilnými s celkovým ekosystémom.
+                    Pracovala som na viac ako 20 produkčných systémoch, vrátane IVR riešení a platforiem pre operátorov call centra, ktoré pokrývali spracovanie hovorov a interné procesy. 
+                    Moje zodpovednosti zahŕňali kompletné dodanie projektov call-centrových liniek od analýzy požiadaviek a návrhu riešenia až po nasadenie do produkčného prostredia, ako aj vývoj automatizačných riešení pre interné procesy.
+                </p>
+                <p>
+                    Okrem vývoja aplikácií som navrhovala a implementovala integračné riešenia a API na komunikáciu medzi systémami, ako aj dátové architektúry vrátane dátových skladov, ETL procesov a analytických platforiem podporujúcich rozsiahle reportovanie a dashboardy.
+                    Taktiež som vyvíjala operačné systémy na zobrazovanie informácií v reálnom čase v prostredí call centra.
+                </p>
+                <p>
+                    Ďalšou dôležitou súčasťou mojej práce bolo vedenie iniciatív zameraných na optimalizáciu procesov, automatizáciu pracovných postupov, modernizáciu a nahrádzanie zastaraných systémov a implementáciu nových technológií s cieľom zvýšiť efektivitu, škálovateľnosť a celkovú prevádzkovú výkonnosť.
+                </p>
+                <p>
+                    Počas šiestich rokov som postúpila z juniornej pozície na vedúcu oddelenia. 
+                    V tejto pozícii som viedla tím počas organizačnej reštrukturalizácie, pričom som kombinovala aktívne technické zapojenie do realizácie riešení s vedením tímu, mentoringom, plánovaním kapacít, spoluprácou so stakeholdermi a prijímaním technických rozhodnutí v podmienkach obmedzených zdrojov a času.
                 </p>
             </div>
             <p class="project-list-label achievement-label">Kľúčové úspechy</p>
             <div class="career-cards">
-                <div class="career-card" data-metric="25%+"><p>Samostatne som navrhla a implementovala dva systémy, ktoré nahradili existujúce zastarané platformy, čím sa znížila nedostupnosť systémov a počet incidentov o 15% a zvýšila sa udržiavateľnosť a prevádzková efektívnosť o viac ako 25%.</p></div>
-                <div class="career-card" data-metric="80%+"><p>Vyvíjala som reportingové riešenia, ktoré zabezpečili prehľad o viac ako 80 % prevádzkových procesov a umožnili efektívnejšie monitorovanie a rozhodovanie na základe dát.</p></div>
-            </div>
-        </div>
-         <div class="content-item project-card">
-            <h3>
-                <span class="date">2026 - doteraz</span>
-            </h3>
-            <div class="project-intro">
-                <p class="project-list-label">Projekty</p>
-                <ul class="project-list">
-                    <li>Významný informačný portál podporujúci vyhľadávanie pracovných príležitostí a pracovnú mobilitu v rámci EÚ.</li>
-                </ul>
-            </div>
-            <div class="project-description">
-                <p>
-                    V súčasnosti pôsobím ako konzultantka v oblasti business analýzy a produktového vlastníctva pre rozsiahlu medzinárodnú digitálnu platformu.
-                </p>
-                <p>
-                    Moja práca je zameraná na analýzu biznis procesov, spoluprácu so stakeholdermi, správu požiadaviek a transformáciu biznis potrieb na jasné a realizovateľné riešenia.
-                    Úzko spolupracujem s biznis zástupcami, doménovými expertmi, dizajnérmi a vývojovými tímami pri definovaní smerovania produktu, prioritizácii iniciatív a zabezpečovaní úspešného dodania riešení.
-                </p>
-                <p>
-                    Významnou súčasťou mojej práce je tvorba vysokourovňových biznis požiadaviek, vyhodnocovanie možných riešení a hľadanie rovnováhy medzi potrebami používateľov, biznis cieľmi a technickými obmedzeniami.
-                </p>
+                <div class="career-card" data-metric="75%+"><p>Automatizácia interných procesov call centra, zníženie manuálnej práce o 75%+.</p></div>
+                <div class="career-card" data-metric="40%+"><p>Návrh jednotného dátového riešenia, ktoré zlepšilo výkon vyhľadávania dát o 40%+, umožnilo personalizáciu IVR a skrátilo čas spracovania hovorov o približne 20%.</p></div>
+                <div class="career-card" data-metric="80%+"><p>Vývoj outbound calling systému na platforme Asterisk, ktorý znížil náklady na infraštruktúru a rozšírenie softvéru o 80%+.</p></div>
             </div>
         </div>
     </section>
