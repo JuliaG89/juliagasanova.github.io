@@ -44,13 +44,20 @@
                     border-radius: 0;
                 }
 
-                .nav-toggle,
-                .desktop-logo {
+                .nav-toggle {
                     display: none;
                 }
 
-                .mobile-logo {
-                    display: block;
+                /* The media query in style.css centres this with position: absolute plus
+                   a translate(); undo both, and make it claim its own full-width row
+                   (flex-basis: 100%) so the wrapped nav links always start below it
+                   instead of squeezing onto the same line. */
+                .nav-logo-link {
+                    position: static;
+                    transform: none;
+                    display: flex;
+                    flex: 0 0 100%;
+                    justify-content: center;
                 }
 
                 .nav-links {
@@ -109,8 +116,10 @@
                 <span class="nav-toggle-line"></span>
             </span>
         </button>
-        <!-- desktop logo (left side) -->
-        <video src="../img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
+        <!-- logo: desktop left, mobile centered (styles.css section 05) -->
+        <a href="#general" class="nav-logo-link">
+            <img src="../img/logo.png" class="nav-logo" alt="Logo Julia Gasanova" width="67" height="40" loading="eager" decoding="async">
+        </a>
         <!-- mobile-only language selector (top right on mobile) -->
         <div class="language-selector mobile-only">
             <label for="language-select-mobile" class="sr-only">Vybrať jazyk</label>
@@ -121,8 +130,6 @@
         </div>
         <!-- links container (center on desktop, dropdown on mobile) -->
         <div class="nav-links">
-            <!-- mobile logo shown inside dropdown -->
-            <video src="../img/logo.mp4" class="nav-logo mobile-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
             <a class="nav-link" href="#general">O mne</a>
             <a class="nav-link" href="#services">Služby</a>
             <a class="nav-link" href="#expertise">Oblasti odbornosti</a>
@@ -171,33 +178,33 @@
         
         <div class="services-grid">
             <div class="service-item">
-                <h3>Biznis analýza a produktový manažment</h3>
-                <p>Identifikácia obchodných potrieb, odhaľovanie príležitostí na zlepšenie a automatizáciu, definovanie produktovej stratégie a plánov modernizácie a riadenie požiadaviek na technické riešenia.</p>
+                <h3>Business analýza</h3>
+                <p>Porozumenie obchodným potrebám, identifikácia problémov a príležitostí na zlepšenie a ich premena na jasne definované požiadavky na digitálne riešenia. Analýza a modelovanie obchodných procesov, identifikácia a overovanie požiadaviek a zosúlaďovanie priorít a cieľov zainteresovaných strán s cieľom zabezpečiť, aby riešenia skutočne riešili podstatu problému.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Vývoj a riadenie produktov</h3>
+                <p>Posudzovanie produktových nápadov z hľadiska obchodných cieľov, ziskovosti, potrebných zdrojov a realizovateľnosti. Overovanie predpokladov, hľadanie alternatív a výber praktických riešení s ohľadom na reálne obmedzenia. Tvorba produktovej stratégie a plánov rozvoja, prispôsobovanie sa meniacim potrebám, správa a prioritizácia produktového backlogu, usmerňovanie vývoja a vyhodnocovanie výsledkov s cieľom identifikovať ďalšie možnosti zlepšenia.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Dátová stratégia, inžinierstvo a analytika</h3>
+                <p>Analýza existujúcich dát a možností ich využitia v podnikaní, identifikácia problémov s kvalitou dát a zlepšovanie ich konzistentnosti a spoľahlivosti. Návrh vhodnej dátovej architektúry, tvorba dátových tokov a integračných riešení, ako aj vývoj reportov a analytických výstupov, ktoré premieňajú komplexné informácie na zrozumiteľné a využiteľné poznatky. Premena roztrieštených dát na štruktúrovaný, transparentný a spoľahlivý základ pre lepšie obchodné rozhodnutia.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Architektúra riešení a technologická stratégia</h3>
+                <p>Výber vhodných technológií a návrh riešení zodpovedajúcich obchodným potrebám. Návrh nových architektúr, zlepšovanie existujúcich riešení a podpora informovaného rozhodovania o technológiách pri zohľadnení funkčnosti, nákladov, škálovateľnosti a dlhodobej udržateľnosti.</p>
             </div>
             
             <div class="service-item">
                 <h3>Digitálna transformácia a modernizácia</h3>
-                <p>Analýza legacy systémov, identifikácia obchodných a technologických nedostatkov a návrh praktických plánov transformácie, ktoré vyvažujú obchodnú hodnotu, riziká a technické obmedzenia.</p>
+                <p>Analýza zastaraných systémov, identifikácia nedostatkov v oblasti podnikových procesov a technológií a odhaľovanie príležitostí na zlepšenie a zavádzanie nových technológií. Tvorba praktických plánov transformácie, posudzovanie a integrácia vhodných riešení a vyhodnocovanie dosiahnutých výsledkov s cieľom zabezpečiť prínos pre podnikanie pri zohľadnení rizík a technických obmedzení.</p>
             </div>
             
             <div class="service-item">
-                <h3>Návrh architektúry riešení a technologická stratégia</h3>
-                <p>Výber vhodných technológií, návrh architektúry riešení od základu, modernizácia existujúcich architektúr a podpora strategických technologických rozhodnutí.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Dátová stratégia, dátové inžinierstvo a analytika</h3>
-                <p>Definovanie dátovej stratégie, návrh dátovej architektúry, dátových pipelineov a integračných riešení. Analýza dát a tvorba reportov akejkoľvek úrovne komplexnosti na podporu rozhodovania založeného na dátach.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Zavádzanie nových technológií</h3>
-                <p>Identifikácia príležitostí na využitie nových technológií, definovanie implementačných plánov a posudzovanie, návrh a integrácia riešení. Vyhodnocovanie výsledkov s cieľom zabezpečiť obchodnú hodnotu.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Technologické líderstvo a riadenie dodávky</h3>
-                <p>Prepájanie biznisových a technických tímov, zosúlaďovanie zainteresovaných strán a vedenie iniciatív od nápadu až po implementáciu. Riadenie dodávky, poskytovanie strategického smerovania a mentoring tímov.</p>
+                <h3>Technologické líderstvo a riadenie realizácie</h3>
+                <p>Prepájanie obchodných cieľov s ich technickou realizáciou. Zlaďovanie zainteresovaných strán, vedenie a mentoring tímov a riadenie iniciatív od prvotného nápadu až po implementáciu. Poskytovanie strategického smerovania a zabezpečovanie toho, aby riešenia prinášali skutočnú hodnotu pre podnikanie.</p>
             </div>
         </div>
     </section>
@@ -513,7 +520,7 @@
             <p class="legal-info">Podnikám na základe živnostenského oprávnenia v rámci Európskeho hospodárskeho priestoru (EHP).</p>
         </div>
         <div>
-            <p><a href="privacy.html" class="privacy-link" onclick="window.open(this.href, 'privacyPopup', 'width=600,height=400,scrollbars=yes,resizable=yes'); return false;">Zásady ochrany osobných údajov webovej stránky</a></p>
+            <p><a href="privacy.html" class="privacy-link" onclick="window.open(this.href, 'privacyPopup', 'width=600,height=400,scrollbars=yes,resizable=yes'); return false;">Zásady ochrany osobných údajov</a></p>
         </div>
     </footer>
 

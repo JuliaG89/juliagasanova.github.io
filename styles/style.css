@@ -277,16 +277,18 @@ section {
   transition: background 220ms ease, color 220ms ease;
 }
 
+/* Wrapping anchor: desktop keeps it inline at the far left (normal flow);
+   the <= 1000px block below switches it to a centred, absolutely positioned
+   mark, independent of the hamburger / language-selector widths either side. */
+.nav-logo-link {
+  display: block;
+  line-height: 0;
+}
+
 .nav-logo {
   display: block;
   width: auto;
   height: 40px;
-}
-
-.mobile-logo {
-  display: none;
-  align-self: center;
-  margin: 0 auto;
 }
 
 .nav-links {
@@ -1074,13 +1076,16 @@ section {
    13. IMAGE PROTECTION (wrapper added by JS)
    ========================================================================== */
 
-.protect-img-wrapper {
+/* :where() keeps these at zero specificity, so a feature class carried over onto
+   the wrapper (e.g. .nav-logo - see initImageProtection in script.js)
+   always wins over these defaults, no matter which rule comes first in the file. */
+:where(.protect-img-wrapper) {
   position: relative;
   display: inline-block;
   vertical-align: top;
 }
 
-.protect-img-wrapper img {
+:where(.protect-img-wrapper) img {
   display: block;
   user-select: none;
   pointer-events: none;
@@ -1088,7 +1093,7 @@ section {
   user-drag: none;
 }
 
-.protect-img-wrapper .protect-overlay {
+:where(.protect-img-wrapper) .protect-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1163,13 +1168,22 @@ section {
     font-size: 14px;
   }
 
-  .desktop-logo,
   .language-selector.desktop-only {
     display: none;
   }
 
-  .mobile-logo {
-    display: block;
+  /* Logo moves out of flow and centres itself in the bar, between the
+     hamburger (left) and the language selector (right) - not inside the
+     dropdown, so it stays visible whether or not the menu is open. */
+  .nav-logo-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-logo-link .nav-logo {
+    height: 32px;
   }
 
   .language-selector.mobile-only {

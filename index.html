@@ -44,13 +44,20 @@
                     border-radius: 0;
                 }
 
-                .nav-toggle,
-                .desktop-logo {
+                .nav-toggle {
                     display: none;
                 }
 
-                .mobile-logo {
-                    display: block;
+                /* The media query in style.css centres this with position: absolute plus
+                   a translate(); undo both, and make it claim its own full-width row
+                   (flex-basis: 100%) so the wrapped nav links always start below it
+                   instead of squeezing onto the same line. */
+                .nav-logo-link {
+                    position: static;
+                    transform: none;
+                    display: flex;
+                    flex: 0 0 100%;
+                    justify-content: center;
                 }
 
                 .nav-links {
@@ -109,8 +116,10 @@
                 <span class="nav-toggle-line"></span>
             </span>
         </button>
-        <!-- desktop logo (left side) -->
-        <video src="img/logo.mp4" class="nav-logo desktop-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
+        <!-- logo: desktop left, mobile centered (styles.css section 05) -->
+        <a href="#general" class="nav-logo-link">
+            <img src="img/logo.png" class="nav-logo" alt="Julia Gasanova logo" width="67" height="40" loading="eager" decoding="async">
+        </a>
         <!-- mobile-only language selector (top right on mobile) -->
         <div class="language-selector mobile-only">
             <label for="language-select-mobile" class="sr-only">Select language</label>
@@ -121,8 +130,6 @@
         </div>
         <!-- links container (center on desktop, dropdown on mobile) -->
         <div class="nav-links">
-            <!-- mobile logo shown inside dropdown -->
-            <video src="img/logo.mp4" class="nav-logo mobile-logo" autoplay muted loop playsinline controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;"></video>
             <a class="nav-link" href="#general">About me</a>
             <a class="nav-link" href="#services">Services</a>
             <a class="nav-link" href="#expertise">Areas of Expertise</a>
@@ -171,33 +178,33 @@
         
         <div class="services-grid">
             <div class="service-item">
-                <h3>Business Analysis & Product Management</h3>
-                <p>Identify business needs, uncover opportunities for improvement and automation, define product strategy and modernisation roadmaps, and manage requirements for technical solutions.</p>
+                <h3>Business Analysis</h3>
+                <p>Understand business needs, identify problems and opportunities for improvement, and translate them into clear requirements for digital solutions. Analyse and model business processes, discover and validate requirements, and help stakeholders align on priorities and goals to ensure that solutions address the right problems.</p>
             </div>
             
             <div class="service-item">
-                <h3>Digital Transformation & Modernisation</h3>
-                <p>Analyse legacy systems, identify business and technology gaps, and define practical transformation roadmaps that balance business value, risk, and technical constraints.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Solution Architecture & Technology Strategy</h3>
-                <p>Select suitable technologies, design solution architectures from scratch, modernise existing architectures, and support strategic technology decisions.</p>
+                <h3>Product Development & Management</h3>
+                <p>Evaluate product ideas based on business goals, profitability, required effort, and implementation feasibility. Test assumptions, explore alternatives, and identify practical solutions that work within real-world constraints. Define product strategy and roadmaps, adapt to changing needs, manage and prioritize the product backlog, guide development, and evaluate results to inform further improvements.</p>
             </div>
             
             <div class="service-item">
                 <h3>Data Strategy, Engineering & Analytics</h3>
-                <p>Define data strategies, design data architectures, pipelines, and integration solutions. Analyse data and develop reports of any complexity to support data-driven decision-making.</p>
+                <p>Analyse existing data and business use cases, identify data quality issues, and improve data consistency and reliability. Design suitable data architectures, build data pipelines and integrations, and develop reports and analytics that make complex information clear and actionable. Turn fragmented data into a structured, transparent, and reliable foundation for better business decisions.</p>
             </div>
             
             <div class="service-item">
-                <h3>New Technology Adoption</h3>
-                <p>Identify opportunities to adopt new technologies, define implementation roadmaps, and assess, design, and integrate solutions. Measure outcomes to ensure business value.</p>
+                <h3>Solution Architecture & Technology Strategy</h3>
+                <p>Find the right technologies and design solutions that fit business needs. Create new architectures, improve existing ones, and make informed technology decisions that balance functionality, cost, scalability, and long-term sustainability.</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Digital Transformation & Modernization</h3>
+                <p>Analyse legacy systems, identify business and technology gaps, and uncover opportunities for improvement and the adoption of new technologies. Define practical transformation roadmaps, assess and integrate suitable solutions, and measure outcomes to ensure business value while balancing risks and technical constraints.</p>
             </div>
             
             <div class="service-item">
                 <h3>Technology Leadership & Delivery</h3>
-                <p>Bridge business and technical teams, align stakeholders, and lead initiatives from idea to implementation. Guide delivery, provide strategic direction, and mentor teams.</p>
+                <p>Connect business goals with technical execution. Align stakeholders, guide and mentor teams, and lead initiatives from idea to implementation, providing strategic direction and ensuring that solutions deliver real business value.</p>
             </div>
         </div>
     </section>
@@ -513,7 +520,7 @@
             <p class="legal-info">Operating under a trade license within the European Economic Area (EEA).</p>
         </div>
         <div>
-            <p><a href="privacy.html" class="privacy-link" onclick="window.open(this.href, 'privacyPopup', 'width=600,height=400,scrollbars=yes,resizable=yes'); return false;">Website Privacy Policy</a></p>
+            <p><a href="privacy.html" class="privacy-link" onclick="window.open(this.href, 'privacyPopup', 'width=600,height=400,scrollbars=yes,resizable=yes'); return false;">Privacy Policy</a></p>
         </div>
     </footer>
 

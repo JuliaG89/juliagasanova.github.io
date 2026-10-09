@@ -366,8 +366,10 @@
             return true;
         }
 
+        // The logo link (.nav-logo-link) jumps the same way as a nav link, but is
+        // kept out of the `links` list above so it never gets the active-link highlight.
         nav.addEventListener('click', event => {
-            const link = event.target.closest('a.nav-link');
+            const link = event.target.closest('a.nav-link, a.nav-logo-link');
             if (!link || !link.getAttribute('href').startsWith('#')) return;
 
             if (jumpTo(link.getAttribute('href'))) {
@@ -773,7 +775,10 @@
             img.style.userSelect = 'none';
 
             const wrapper = document.createElement('span');
-            wrapper.className = 'protect-img-wrapper';
+            // Copy the image's own classes too, so layout rules written for the image
+            // (e.g. the nav logo's alignment inside its flex row) still apply once the
+            // image is nested inside this wrapper.
+            wrapper.className = ('protect-img-wrapper ' + img.className).trim();
             img.parentNode.insertBefore(wrapper, img);
             wrapper.appendChild(img);
 
