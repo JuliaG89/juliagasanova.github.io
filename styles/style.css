@@ -32,7 +32,9 @@
    01. DESIGN TOKENS
    ========================================================================== */
 
-/* Inter and Space Grotesk are loaded by the <link> tags in the HTML head. */
+/* Golos Text (body text) and Unbounded (headings) are loaded by the <link> tags in
+   the HTML head, with Inter alongside them as a fallback - see the comment
+   there for why. */
 
 :root {
   /* Colours */
@@ -73,7 +75,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Golos Text', 'Inter', sans-serif;
   color: inherit;
 }
 
@@ -100,17 +102,17 @@ ul {
   list-style-position: outside;
 }
 
-/* Headings: font and hover lift (--h-lift / --h-scale are set on :hover) */
+/* Headings: font and hover lift (--h-lift / --h-scale are set on :hover).
+   Nav text is NOT included here - Unbounded is a bold display face that gets
+   cramped at the nav's small sizes, so the nav keeps the body typeface instead
+   (it already inherits 'Golos Text', 'Inter', sans-serif from the * rule above). */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.main-nav,
-.main-nav .nav-link,
-.nav-toggle {
-  font-family: 'Space Grotesk', sans-serif;
+h6 {
+  font-family: 'Unbounded', 'Inter', sans-serif;
 }
 
 h1,
@@ -631,7 +633,7 @@ section {
   --h-depth: 22px;
   margin-bottom: 16px;
   color: #000;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Unbounded', 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 600;
   transform: translateY(var(--h-lift, 0)) translateZ(var(--h-depth)) scale(var(--h-scale, 1));
@@ -677,7 +679,7 @@ section {
   margin: 0;
   padding: 18px 20px 0;
   color: var(--accent-color);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Unbounded', 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.25;
   background: linear-gradient(180deg, rgba(255, 179, 102, 0.1), rgba(255, 179, 102, 0.04));
@@ -739,7 +741,7 @@ section {
 
 .skills-list .tech-list li b {
   color: var(--accent-light);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Golos Text', 'Inter', sans-serif;
 }
 
 
@@ -903,7 +905,7 @@ section {
   left: 20px;
   display: block;
   color: var(--accent-color);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Unbounded', 'Inter', sans-serif;
   font-size: clamp(22px, 3.2vw, 42px);
   font-weight: 700;
   line-height: 1;

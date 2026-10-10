@@ -25,7 +25,11 @@
     <!-- Fonts: linked here (not @import in the CSS) so the browser can load them in parallel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <!-- Unbounded (headings) and Golos Text (body text) are the site's typefaces; Inter
+         loads in the same request purely as a fallback if either fails - and since
+         Inter is so common elsewhere on the web, many visitors already have it
+         cached, so it appears almost instantly when it's needed. -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Golos+Text:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="../styles/style.css">
     <noscript>
         <style>
