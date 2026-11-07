@@ -41,7 +41,7 @@
   --accent-color: #ffb366;
   --accent-light: #ffd097;
   --accent-muted: #f3d1ad;
-  --surface-dark: #131313;
+  --surface-dark: #1c1c1e;
   --text-body: #333;
 
   /* Heading hover */
@@ -395,7 +395,7 @@ section {
   color: var(--accent-color);
   font-size: 13px;
   font-weight: 600;
-  background: #1a1a1a;
+  background: #252528;
 }
 
 
